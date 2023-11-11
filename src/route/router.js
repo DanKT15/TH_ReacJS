@@ -2,7 +2,9 @@ import React from 'react';
 import { createBrowserRouter } from "react-router-dom";
 
 import App from '../compoment/App';
-import Test from '../compoment/Test';
+// import Test from '../compoment/Test';
+
+import Login from '../compoment/Login';
 
 const router = createBrowserRouter([
   {
@@ -14,9 +16,13 @@ const router = createBrowserRouter([
         element: <h1>hello</h1>,
       },
       {
-        path: "test",
-        element: <Test/>,
+        path: "login",
+        element: <Login/>,
       },
+      // {
+      //   path: "test",
+      //   element: <Test/>,
+      // },
     ]
   },
   {
