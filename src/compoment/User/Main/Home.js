@@ -28,7 +28,7 @@ function Home() {
        
        <div class="row mb-4">
          <div class="col-md-12">
-             <h2>Bài viết mới nhất</h2>
+             <h2>Bài viết nổi bật</h2>
          </div>
    
          <div class="col-md-3">
@@ -76,6 +76,9 @@ function Home() {
          </div>
      </div>
      <div class="row">
+     <div class="col-md-12">
+             <h2>Bài viết mới nhất</h2>
+         </div>
         {posts.map((item, index) => (
             //     <li key={index}>
             //     {/* Sử dụng template strings để xây dựng URL với id */}

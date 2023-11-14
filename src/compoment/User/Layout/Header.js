@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-
+import Image1 from "../Public/Img/zcDnTj.jpg"
+import Image2 from "../Public/Img/tin-tuc-1536638752.jpg"
+import "../Public/Css/style.css"
 function Menu() {
   const [users, setUsers] = useState([]);
 
@@ -40,7 +42,7 @@ function Menu() {
          <div id="wrapper" >
 	
  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Hot.Net</a>
+  <a class="navbar-brand" href="#">Hot.NetLe</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
   </button>
@@ -79,6 +81,32 @@ function Menu() {
       </ul>
   </div>
 </nav>
+
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+   
+    <div class="carousel-item active">
+    <img src={Image2} class="d-block w-100" />
+      
+    </div>
+    
+    <div class="carousel-item">
+    <img src={Image1} class="d-block w-100" />    </div>
+   
+    <div class="carousel-item">
+    <img src={Image2} class="d-block w-100" />    </div>
+  </div>
+  
+  <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
     
     
     </div>

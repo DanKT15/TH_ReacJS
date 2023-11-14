@@ -1,0 +1,4 @@
+#myCarousel img {
+    max-height: 500px; /* Đặt chiều cao tối đa của hình ảnh */
+    margin: auto; /* Căn giữa hình ảnh */
+  }
