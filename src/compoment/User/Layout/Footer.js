@@ -6,7 +6,7 @@ function Footer(){
             <div class="col-md-6">
                 <h5>Liên hệ</h5>
                 <p>Địa chỉ: 123 Đường ABC, Thành phố XYZ</p>
-                <p>Email: info@example.com</p>
+                <p>Email: info@example1.com</p>
                 <p>Điện thoại: (123) 456-7890</p>
             </div>
             <div class="col-md-6">
