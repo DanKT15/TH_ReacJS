@@ -1,17 +1,13 @@
 import axios from 'axios';
 
+axios.defaults.withCredentials = true;
+
 const Login = async (username, password) => {
-    return await axios.post("http://localhost:8000/api/v1/login",
-        {
-            username,
-            password
-        })
-        // .then(function (response) {
-        //     console.log(response);
-        // })
-        // .catch(function (error) {
-        //     console.log(error);
-        // });
+    return await axios.post("http://localhost:8000/api/v1/login",{ username, password });
 }
 
-export default { Login }
+const GetAuth = async () => {
+    return axios.get('http://localhost:8000/api/v1/login-auth');
+}
+
+export default { Login, GetAuth }

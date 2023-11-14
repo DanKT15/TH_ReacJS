@@ -1,5 +1,5 @@
 import { Context } from '../../compoment/Admin/Context';
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Api_Login from "../../service/API_Login";
@@ -31,8 +31,6 @@ export default function Login () {
         e.preventDefault();
 
         const dangnhap = await Api_Login.Login(data_login.username, data_login.Pass);
-
-        // console.log(dangnhap.data.err);
         
         if (dangnhap !== null) {
             if (dangnhap.data.err === 1) {
@@ -40,8 +38,7 @@ export default function Login () {
             }
             else {
                 setItems(data_login);
-                // console.log(items);
-                
+
                 alert("Susses: " + dangnhap.data.mess);
             }
         }
@@ -51,9 +48,21 @@ export default function Login () {
 
     };
 
-    // useEffect(() => {
+    useEffect( () => {
+
+        const Auth = async () => {
+
+            const GetAuth = await Api_Login.GetAuth();
+
+            if (GetAuth.data.jwt.token !== "") {
+                navigate("admin");
+            }
+
+        };
         
-    // }, []); 
+        Auth();
+
+    }, []);     
 
     return ( 
         <>
