@@ -1,15 +1,18 @@
-import { Context } from './Context'
-import { useContext, useState } from "react"
+import { Context } from '../../compoment/Admin/Context';
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-import Api_Login from "../service/API_Login";
+import Api_Login from "../../service/API_Login";
 
-import img_login from "../asset/images/team.jpg";
+import img_login from "../../asset/images/team.jpg";
 
 export default function Login () {
 
-    const { items, setItems } = useContext(Context);
+    const { setItems } = useContext(Context);
 
     const [data_login, setdatalogin] = useState({username: "", Pass: ""});
+
+    const navigate = useNavigate(); // chuyển hướng link
 
     const handleChange_name = (e) => {
         setdatalogin(data => {
