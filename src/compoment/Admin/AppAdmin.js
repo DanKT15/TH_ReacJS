@@ -1,17 +1,17 @@
 import { useContext, useState } from "react"
 import { Link, Outlet } from "react-router-dom";
 import { ContextProvider } from "../../compoment/Admin/Context"
+import Header from "../Admin/Header"
 
 function AppAdmin() {
 
   return (
     
       <ContextProvider>
-        <h3>Menu</h3>
 
-        <ul><li><Link to={'login-admin'}>login</Link></li></ul>
-
+        <Header/>
         <Outlet/>
+        
       </ContextProvider>
 
   );

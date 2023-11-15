@@ -6,8 +6,12 @@ const Login = async (username, password) => {
     return await axios.post("http://localhost:8000/api/v1/login",{ username, password });
 }
 
-const GetAuth = async () => {
-    return axios.get('http://localhost:8000/api/v1/login-auth');
+const LogOut = async () => {
+    return await axios.get("http://localhost:8000/api/v1/logout");
 }
 
-export default { Login, GetAuth }
+const GetAuth = async () => {
+    return await axios.get('http://localhost:8000/api/v1/login-auth');
+}
+
+export default { Login, GetAuth, LogOut }

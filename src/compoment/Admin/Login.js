@@ -31,19 +31,15 @@ export default function Login () {
         e.preventDefault();
 
         const dangnhap = await Api_Login.Login(data_login.username, data_login.Pass);
-        
-        if (dangnhap !== null) {
-            if (dangnhap.data.err === 1) {
-                alert("Errors: " + dangnhap.data.mess);
-            }
-            else {
-                setItems(data_login);
-
-                alert("Susses: " + dangnhap.data.mess);
-            }
+       
+        if (dangnhap.data.err === 1) {
+            alert("Errors: " + dangnhap.data.mess);
         }
-        else{
-            alert("Errors: Server khong phan hoi !!!")
+        else {
+            setItems(data => {
+                return {...data, user: "kiet", role: "2"}
+            });
+            navigate("/admin");
         }
 
     };
@@ -54,12 +50,14 @@ export default function Login () {
 
             const GetAuth = await Api_Login.GetAuth();
 
-            if (GetAuth.data.jwt.token !== "") {
-                navigate("admin");
+            const userinfo = GetAuth.data;
+
+            if (userinfo.err === 0) {
+                navigate("/admin");
             }
 
         };
-        
+    
         Auth();
 
     }, []);     
