@@ -35,7 +35,7 @@ const router = createBrowserRouter([
       },
       {
         // Thêm một route cụ thể cho đường dẫn /api/news/:id
-        path: "api/news/:id",
+        path: "api/post/:id",
         element: <NewsDetail />,
       },
 

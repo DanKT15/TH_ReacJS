@@ -7,8 +7,8 @@ import "../Public/Css/style.css"
 function Menu() {
   const [users, setUsers] = useState([]);
 
-  useEffect(() => {
-    axios.get('http://localhost:8000/api/news')
+  useEffect(() => {  
+    axios.get('http://localhost:8000/api/news', { withCredentials: true })
       .then(response => {
         // setUsers(response.data);
         // setUsers(response.data);
@@ -20,29 +20,11 @@ function Menu() {
   }, []);
 
   return (
-    // <div className="App">
-    //   <h1>Danh sach tin tuc</h1>
-    //   <ul>
-    //     {users.map((item, index) => (
-    //       <li key={index}>
-    //       {/* Sử dụng template strings để xây dựng URL với id */}
-          
-    //       <Link to={`/api/news/${item.id}`} >
-    //         {item.title}
-    //       </Link>
-    //     </li>
-    //     ))}
-    //   </ul>
-
-   
-      
-    //  </div>
-
 
          <div id="wrapper" >
 	
  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Hot.NetLe</a>
+  <a class="navbar-brand" href="/">Hot.Net</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
   </button>

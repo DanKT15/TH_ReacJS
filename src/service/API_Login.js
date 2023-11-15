@@ -14,4 +14,6 @@ const GetAuth = async () => {
     return await axios.get('http://localhost:8000/api/v1/login-auth');
 }
 
+
+
 export default { Login, GetAuth, LogOut }
