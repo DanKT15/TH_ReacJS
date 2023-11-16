@@ -8,7 +8,7 @@ import Login from '../compoment/Admin/Login';
 import App from '../compoment/App';
 import Test from '../compoment/Test';
 import NewsDetail from '../compoment/User/Main/NewsDetail';
-
+import PostFromNew from '../compoment/User/Main/PostFromNew';
 const router = createBrowserRouter([
   {
     path: "admin",
@@ -37,6 +37,11 @@ const router = createBrowserRouter([
         // Thêm một route cụ thể cho đường dẫn /api/news/:id
         path: "api/post/:id",
         element: <NewsDetail />,
+      },
+      {
+        // Thêm một route cụ thể cho đường dẫn /api/news/:id
+        path: "api/news/:id",
+        element: <PostFromNew />,
       },
 
     ]
