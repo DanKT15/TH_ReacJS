@@ -16,6 +16,7 @@ export default function Header() {
         // console.log(oject.data.err);
 
         if (oject.data.err === 0) {
+            
             navigate("login-admin");
         }
 
@@ -82,13 +83,8 @@ export default function Header() {
                 <div className="collapse navbar-collapse" id="myNavbar">
                     <ul className="nav navbar-nav navbar-right">
                         
-                        {/* <li><a href="/about" data-toggle="tooltip" data-placement="bottom" title="TIỀN LƯƠNG">About</a></li>
-                        <li><a href="/list-user/0-10" data-toggle="tooltip" data-placement="bottom" title="ĐIỂM DANH">Danh Sách User</a></li>
-                        <li><a href="/create_new_user" data-toggle="tooltip" data-placement="bottom" title="LỊCH CÔNG TÁC">Thêm User</a></li>       
-                        <li><a href="/list-news/0-10" data-toggle="tooltip" data-placement="bottom" title="ĐIỂM DANH">Danh Sách Danh Mục</a></li>
-                        <li><a href="/create_new_news" data-toggle="tooltip" data-placement="bottom" title="LỊCH CÔNG TÁC">Thêm Danh Mục</a></li>
-                        <li><a href="/list-post/0-10" data-toggle="tooltip" data-placement="bottom" title="ĐIỂM DANH">Danh Sách Bài Viết</a></li>
-                        <li><a href="/create_new_post" data-toggle="tooltip" data-placement="bottom" title="LỊCH CÔNG TÁC">Thêm Bài Viết</a></li> */}
+                        <Link to={'list_user'} data-toggle="tooltip" data-placement="bottom">Danh sách user</Link>
+                        <Link to={'add_user'} data-toggle="tooltip" data-placement="bottom">Thêm user</Link>
 
                         <li>
                             {

@@ -3,10 +3,12 @@ import { createBrowserRouter } from "react-router-dom";
 
 import AppAdmin from '../compoment/Admin/AppAdmin';
 import Login from '../compoment/Admin/Login';
+import ListUser from "../compoment/Admin/user/ListUser";
+import UpdataUser from "../compoment/Admin/user/UpdataUser";
+import AddUser from "../compoment/Admin/user/AddUser";
 
 
 import App from '../compoment/App';
-import Test from '../compoment/Test';
 import NewsDetail from '../compoment/User/Main/NewsDetail';
 import PostFromNew from '../compoment/User/Main/PostFromNew';
 const router = createBrowserRouter([
@@ -21,6 +23,18 @@ const router = createBrowserRouter([
       {
         path: "login-admin",
         element: <Login/>,
+      },
+      {
+        path: "list_user",
+        element: <ListUser/>,
+      },
+      {
+        path: "add_user",
+        element: <AddUser/>,
+      },
+      {
+        path: "updata_user/:username",
+        element: <UpdataUser/>,
       },
     ]
   },

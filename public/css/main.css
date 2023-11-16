@@ -80,7 +80,7 @@ ul, li {
 /*---------------------------------------------*/
 input {
 	outline: var(--none);
-	border: var(--none);
+	/* border: var(--none); */
 }
 textarea:focus, input:focus {
   border-color: var(--transparent) !important;
