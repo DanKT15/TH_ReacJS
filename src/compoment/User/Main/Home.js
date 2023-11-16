@@ -4,12 +4,11 @@ import { useParams,Link } from 'react-router-dom';
 
 import Image from "../Public/Img/GettyImages-1267679968.jpg"
 
-
 function Home() {
     const [posts, setUsers] = useState([]);
   
     useEffect(() => {
-      axios.get('http://localhost:8000/api/posts')
+      axios.get('http://localhost:8000/api/posts', { withCredentials: true })
         .then(response => {
           // setUsers(response.data);
           // setUsers(response.data);
@@ -33,6 +32,7 @@ function Home() {
    
          <div class="col-md-3">
              <div class="card mb-4">
+                
                  <img src={Image} classNameclass="card-img-top" />
                  <div class="card-body">
                      <h5 class="card-title">Tiêu đề tin tức 1</h5>
@@ -92,7 +92,7 @@ function Home() {
                 <div class="card mb-4">
                     <img src={Image} classNameclass="card-img-top" />
                     <div class="card-body">
-                        <h5 class="card-title"><Link to={`/api/news/${item.id}`} >{item.title}</Link></h5>
+                        <h5 class="card-title"><Link to={`/api/post/${item.id}`} >{item.title}</Link></h5>
                         <p class="card-text">Nội dung tin tức sẽ được đặt ở đây...</p>
                         <a href="#" class="btn btn-primary">Đọc thêm</a>
                     </div>
