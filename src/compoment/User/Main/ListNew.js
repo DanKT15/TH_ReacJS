@@ -5,7 +5,7 @@ function ListNew() {
     const [users, setUsers] = useState([]);
   
     useEffect(() => {
-      axios.get('http://localhost:8000/api/news')
+      axios.get('http://localhost:8010/api/v1/news')
         .then(response => {
           // setUsers(response.data);
           // setUsers(response.data);
@@ -26,7 +26,7 @@ function ListNew() {
             <li key={index}>
             {/* Sử dụng template strings để xây dựng URL với id */}
             
-            <Link to={`/api/news/${item.id}`} >
+            <Link to={`/api/v1/news/${item.id}`} >
               {item.title}
             </Link>
           </li>

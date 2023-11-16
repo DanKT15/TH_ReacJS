@@ -49,12 +49,12 @@ const router = createBrowserRouter([
       },
       {
         // Thêm một route cụ thể cho đường dẫn /api/news/:id
-        path: "api/post/:id",
+        path: "api/v1/post/:id",
         element: <NewsDetail />,
       },
       {
         // Thêm một route cụ thể cho đường dẫn /api/news/:id
-        path: "api/news/:id",
+        path: "api/v1/news/:id",
         element: <PostFromNew />,
       },
 

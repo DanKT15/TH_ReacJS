@@ -8,7 +8,7 @@ function PostFromNew() {
     const [Posts, setPosts] = useState([]);
   
     useEffect(() => {
-      axios.get('http://localhost:8000/api/news/'+id, { withCredentials: true })
+      axios.get('http://localhost:8010/api/v1/news/'+id, { withCredentials: true })
         .then(response => {
           // setUsers(response.data);
           // setUsers(response.data);
@@ -44,9 +44,9 @@ function PostFromNew() {
 
       <div class="col-md-4" key={index}>
         <div class="card mb-4">
-        <img src={Image} className="card-img-top" alt="Card image" style={{ width: '348px', height: '300px' }} />
+        <img src={Image} className="card-img-top" alt="Card image" style={{ width: '268px', height: '300px' }} />
           <div class="card-body">
-            <h5 class="card-title"><Link to={`/api/post/${item.id}`} >
+            <h5 class="card-title"><Link to={`/api/v1/post/${item.id}`} >
           {item.title}
         </Link></h5>
             <p class="card-text"> {item.content}</p>

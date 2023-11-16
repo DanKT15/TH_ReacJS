@@ -8,7 +8,7 @@ function NewsDetail(){
   const {id} = useParams();
   const [Post, setPost] = useState([])
   useEffect(()=>{
-    axios.get('http://localhost:8000/api/post/'+id, { withCredentials: true })
+    axios.get('http://localhost:8010/api/v1/post/'+id, { withCredentials: true })
     .then(response => {
       // console.log(response)
       setPost(response.data.data);
@@ -22,7 +22,7 @@ function NewsDetail(){
   const [listNews, setNews] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/news')
+    axios.get('http://localhost:8010/api/v1/news')
       .then(response => {
         // setUsers(response.data);
         // setUsers(response.data);
@@ -65,7 +65,7 @@ function NewsDetail(){
                       <li key={index}>
                       {/* Sử dụng template strings để xây dựng URL với id */}
                       
-                      <Link to={`/api/news/${item.id}`} >
+                      <Link to={`/api/v1/news/${item.id}`} >
                          <li class="list-group-item">{item.title}</li>
                       </Link>
                     </li>

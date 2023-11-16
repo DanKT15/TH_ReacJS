@@ -8,7 +8,7 @@ function Menu() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {  
-    axios.get('http://localhost:8000/api/news', { withCredentials: true })
+    axios.get('http://localhost:8010/api/v1/news', { withCredentials: true })
       .then(response => {
         // setUsers(response.data);
         // setUsers(response.data);
@@ -45,7 +45,7 @@ function Menu() {
                 // </li>
                 //   <li key={index}>
                 <a key={index} class="dropdown-item" href="#">
-                    <Link to={`/api/news/${item.id}`} >
+                    <Link to={`/api/v1/news/${item.id}`} >
                     {item.title}
                   </Link>
                 </a>
