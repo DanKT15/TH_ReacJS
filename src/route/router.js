@@ -7,6 +7,10 @@ import ListUser from "../compoment/Admin/user/ListUser";
 import UpdataUser from "../compoment/Admin/user/UpdataUser";
 import AddUser from "../compoment/Admin/user/AddUser";
 
+import AddPost from "../compoment/Admin/post/AddPost";
+import ListPost from "../compoment/Admin/post/ListPost";
+import UpdataPost from "../compoment/Admin/post/UpdataPost";
+
 
 import App from '../compoment/App';
 import NewsDetail from '../compoment/User/Main/NewsDetail';
@@ -35,6 +39,18 @@ const router = createBrowserRouter([
       {
         path: "updata_user/:username",
         element: <UpdataUser/>,
+      },
+      {
+        path: "add_post",
+        element: <AddPost/>,
+      },
+      {
+        path: "list_post",
+        element: <ListPost/>,
+      },
+      {
+        path: "updata_post/:id",
+        element: <UpdataPost/>,
       },
     ]
   },
