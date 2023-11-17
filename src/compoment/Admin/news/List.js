@@ -3,81 +3,78 @@ import { useNavigate } from "react-router-dom";
 
 import API_Post from "../../../service/API_Post";
 import Api_Login from "../../../service/API_Login";
+import Api_New from "../../../service/API_New";
 
 import List from "../List";
 
-export default function ListPost() {
+export default function ListNews() {
 
-    const [dataPost, setdataPost] = useState([]);
+    const [ListNews, setListNews] = useState([]);
 
     const navigate = useNavigate(); // chuyển hướng link
 
     const datathead = [
         {value: "id"},
         {value: "title"},
-        {value: "content"},
-        {value: "image"},
-        {value: "news_id"},
-        {value: "currentDate"}
-    ];       
+        
+    ];
+    
+    const ApiNews = async () => {
 
-    const ApiPost = async () => {
-
-        const oject = await API_Post.list_post();
+        const oject = await Api_New.list_news();
 
         // console.log(oject.data.err);
     
         if (oject.data.err === 0) {
-    
-            let Post = oject.data.list; // [0].email
+            
+
+            let New = oject.data.items; 
 
             let tamp = [];
 
-            for (let index = 0; index < Post.length; index++) {
+            for (let index = 0; index < New.length; index++) {
 
                 tamp.push(
                     {   
-                        id: Post[index].id,
+                        id: New[index].id,
                         data: 
                         [
-                            Post[index].id,
-                            Post[index].title,
-                            Post[index].content,
-                            Post[index].create_at,
-                            Post[index].image,
-                            Post[index].news_id
+                            New[index].id,
+                            New[index].title,
+                            
                         ]
                     }
                 )
 
             }
 
-            setdataPost(tamp);
+            setListNews(tamp);
 
         }
+
+       
         
     }
-
     const handleDelete = async (id) => {
 
-        const oject = await API_Post.del_post(id);
+        const oject = await Api_New.del_new(id);
 
         if (oject.data.err === 0) {
-            console.log(oject.data);
-            setdataPost(
-                dataPost.filter(
+            console.log(oject.items);
+            setListNews(
+                ListNews.filter(
                     (e) => e.id !== id
                 )
             )
         }
         else {
-            console.log(oject.data);
+            console.log(oject.items);
         }
 
     }
 
     const linkUpdate = (id) => {
-        navigate("/admin/updata_post/" + id);
+        navigate("/admin/edit_news/" + id);
     }
 
     useEffect( () => {
@@ -95,19 +92,16 @@ export default function ListPost() {
             }
 
         };
-
-       
     
         Auth();
 
-        ApiPost();
+        ApiNews();
 
     }, []); 
-
     return ( 
         <>
-            <h1>Danh sách post</h1>
-            <List datathead={ datathead } datalist={ dataPost } handleDelete={ handleDelete } linkUpdate= { linkUpdate }/>
+            <h1>Danh sách tin tuc</h1>
+            <List datathead={ datathead } datalist={ ListNews } handleDelete={ handleDelete } linkUpdate= { linkUpdate }/>
         </>
     );
 }

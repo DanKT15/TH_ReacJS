@@ -26,7 +26,7 @@ function ListNew() {
             <li key={index}>
             {/* Sử dụng template strings để xây dựng URL với id */}
             
-            <Link to={`/api/v1/news/${item.id}`} >
+            <Link to={`/news/${item.id}`} >
               {item.title}
             </Link>
           </li>

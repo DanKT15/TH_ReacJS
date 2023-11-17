@@ -87,7 +87,8 @@ export default function Header() {
                         <Link to={'add_user'} data-toggle="tooltip" data-placement="bottom">Thêm user</Link>
                         <Link to={'list_post'} data-toggle="tooltip" data-placement="bottom">Danh sách post</Link>
                         <Link to={'add_post'} data-toggle="tooltip" data-placement="bottom">Thêm post</Link>
-                        
+                        <Link to={'list_news'} data-toggle="tooltip" data-placement="bottom">Danh sách news</Link>
+                        <Link to={'add_new'} data-toggle="tooltip" data-placement="bottom">Thêm mới news</Link>
                         <li>
                             {
                                 login_logout(items)

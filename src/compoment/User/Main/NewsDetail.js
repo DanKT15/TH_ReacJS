@@ -65,7 +65,7 @@ function NewsDetail(){
                       <li key={index}>
                       {/* Sử dụng template strings để xây dựng URL với id */}
                       
-                      <Link to={`/api/v1/news/${item.id}`} >
+                      <Link to={`/news/${item.id}`} >
                          <li class="list-group-item">{item.title}</li>
                       </Link>
                     </li>

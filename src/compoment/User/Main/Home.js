@@ -92,7 +92,7 @@ function Home() {
                 <div class="card mb-4">
                     <img src={Image} classNameclass="card-img-top" />
                     <div class="card-body">
-                        <h5 class="card-title"><Link to={`/api/v1/post/${item.id}`} >{item.title}</Link></h5>
+                        <h5 class="card-title"><Link to={`/post/${item.id}`} >{item.title}</Link></h5>
                         <p class="card-text">Nội dung tin tức sẽ được đặt ở đây...</p>
                         <a href="#" class="btn btn-primary">Đọc thêm</a>
                     </div>

@@ -12,6 +12,9 @@ import ListPost from "../compoment/Admin/post/ListPost";
 import UpdataPost from "../compoment/Admin/post/UpdataPost";
 
 
+import ListNews from '../compoment/Admin/news/List';
+import AddNew from '../compoment/Admin/news/Add';
+
 import App from '../compoment/App';
 import NewsDetail from '../compoment/User/Main/NewsDetail';
 import PostFromNew from '../compoment/User/Main/PostFromNew';
@@ -52,8 +55,17 @@ const router = createBrowserRouter([
         path: "updata_post/:id",
         element: <UpdataPost/>,
       },
+      {
+        path: "list_news",
+        element: <ListNews/>,
+      },
+      {
+        path: "add_new",
+        element: <AddNew/>,
+      },
     ]
   },
+  //USER 
   {
     path: "/",
     element: <App/>,
@@ -65,12 +77,12 @@ const router = createBrowserRouter([
       },
       {
         // Thêm một route cụ thể cho đường dẫn /api/news/:id
-        path: "api/v1/post/:id",
+        path: "post/:id",
         element: <NewsDetail />,
       },
       {
         // Thêm một route cụ thể cho đường dẫn /api/news/:id
-        path: "api/v1/news/:id",
+        path: "news/:id",
         element: <PostFromNew />,
       },
 

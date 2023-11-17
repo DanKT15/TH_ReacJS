@@ -46,7 +46,7 @@ function PostFromNew() {
         <div class="card mb-4">
         <img src={Image} className="card-img-top" alt="Card image" style={{ width: '268px', height: '300px' }} />
           <div class="card-body">
-            <h5 class="card-title"><Link to={`/api/v1/post/${item.id}`} >
+            <h5 class="card-title"><Link to={`/post/${item.id}`} >
           {item.title}
         </Link></h5>
             <p class="card-text"> {item.content}</p>

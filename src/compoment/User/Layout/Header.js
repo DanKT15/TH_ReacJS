@@ -45,7 +45,7 @@ function Menu() {
                 // </li>
                 //   <li key={index}>
                 <a key={index} class="dropdown-item" href="#">
-                    <Link to={`/api/v1/news/${item.id}`} >
+                    <Link to={`/news/${item.id}`} >
                     {item.title}
                   </Link>
                 </a>
