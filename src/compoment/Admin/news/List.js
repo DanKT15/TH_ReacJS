@@ -18,26 +18,29 @@ export default function ListNews() {
         {value: "title"},
         
     ];
-    
+
     const ApiNews = async () => {
 
         const oject = await Api_New.list_news();
 
+   
         // console.log(oject.data.err);
     
         if (oject.data.err === 0) {
             
-
+           
             let New = oject.data.items; 
 
-            let tamp = [];
+            let tamp = []; 
+
+            
 
             for (let index = 0; index < New.length; index++) {
 
                 tamp.push(
                     {   
                         id: New[index].id,
-                        data: 
+                        data:
                         [
                             New[index].id,
                             New[index].title,
@@ -74,8 +77,9 @@ export default function ListNews() {
     }
 
     const linkUpdate = (id) => {
-        navigate("/admin/edit_news/" + id);
+        navigate("/admin/edit_new/" + id);
     }
+
 
     useEffect( () => {
 
@@ -88,6 +92,7 @@ export default function ListNews() {
             // console.log(userinfo);
 
             if (userinfo.err === 1) {
+               
                 navigate("/admin/login-admin");
             }
 

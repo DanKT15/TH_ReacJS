@@ -4,9 +4,12 @@ import { useParams,Link } from 'react-router-dom';
 
 import Image from "../Public/Img/GettyImages-1267679968.jpg"
 
+
+
+
 function Home() {
     const [posts, setUsers] = useState([]);
-  
+    const [NewPosts, setNewPosts] = useState([]);
     useEffect(() => {
       axios.get('http://localhost:8010/api/v1/posts', { withCredentials: true })
         .then(response => {
@@ -18,7 +21,21 @@ function Home() {
           console.error('Error:', error);
         });
     }, []);
-  
+
+
+    useEffect(() => {
+        axios.get('http://localhost:8010/api/v1/new_posts', { withCredentials: true })
+          .then(response => {
+            // setUsers(response.data);
+            // setUsers(response.data);
+            setNewPosts(response.data.data);
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          });
+      }, []);
+
+      
     return (
      
         
@@ -29,55 +46,25 @@ function Home() {
          <div class="col-md-12">
              <h2>Bài viết nổi bật</h2>
          </div>
-   
-         <div class="col-md-3">
-             <div class="card mb-4">
+         {NewPosts.map((item, index) => (
+         <div key={index} class="col-md-4">
+         <div class="card mb-4">
+             <img src={Image} classNameclass="card-img-top" />
+             <div class="card-body">
+                 <h5 class="card-title"><Link to={`/post/${item.id}`} >{item.title}</Link></h5>
+                 <p class="card-text">{item.content}</p>
                 
-                 <img src={Image} classNameclass="card-img-top" />
-                 <div class="card-body">
-                     <h5 class="card-title">Tiêu đề tin tức 1</h5>
-                     <p class="card-text">Nội dung tin tức sẽ được đặt ở đây...</p>
-                     <a href="#" class="btn btn-primary">Đọc thêm</a>
-                 </div>
+                 <a ><Link to={`/post/${item.id}`} >Đọc thêm</Link></a>
              </div>
          </div>
-   
-         <div class="col-md-3">
-             <div class="card mb-4">
-                 <img src={Image} classNameclass="card-img-top" />
-                 <div class="card-body">
-                     <h5 class="card-title">Tiêu đề tin tức 2</h5>
-                     <p class="card-text">Nội dung tin tức sẽ được đặt ở đây...</p>
-                     <a href="#" class="btn btn-primary">Đọc thêm</a>
-                 </div>
-             </div>
          </div>
-   
-         <div class="col-md-3">
-             <div class="card mb-4">
-                 <img src={Image} classNameclass="card-img-top" />
-                 <div class="card-body">
-                     <h5 class="card-title">Tiêu đề tin tức 3</h5>
-                     <p class="card-text">Nội dung tin tức sẽ được đặt ở đây...</p>
-                     <a href="#" class="btn btn-primary">Đọc thêm</a>
-                 </div>
-             </div>
-         </div>
-   
-         <div class="col-md-3">
-             <div class="card mb-4">
-                 <img src={Image} classNameclass="card-img-top" />
-                 <div class="card-body">
-                     <h5 class="card-title">Tiêu đề tin tức 4</h5>
-                     <p class="card-text">Nội dung tin tức sẽ được đặt ở đây...</p>
-                     <a href="#" class="btn btn-primary">Đọc thêm</a>
-                 </div>
-             </div>
-         </div>
+        ))}
+       
+        
      </div>
      <div class="row">
      <div class="col-md-12">
-             <h2>Bài viết mới nhất</h2>
+             <h2>tất cả bài viết</h2>
          </div>
         {posts.map((item, index) => (
             //     <li key={index}>
@@ -93,8 +80,9 @@ function Home() {
                     <img src={Image} classNameclass="card-img-top" />
                     <div class="card-body">
                         <h5 class="card-title"><Link to={`/post/${item.id}`} >{item.title}</Link></h5>
-                        <p class="card-text">Nội dung tin tức sẽ được đặt ở đây...</p>
-                        <a href="#" class="btn btn-primary">Đọc thêm</a>
+                        <p class="card-text">{item.content}</p>
+                       
+                        <a ><Link to={`/post/${item.id}`} >Đọc thêm</Link></a>
                     </div>
                 </div>
                 </div>

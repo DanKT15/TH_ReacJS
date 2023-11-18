@@ -17,5 +17,18 @@ const insert_new = async (title) => {
 }
 
 
+const edit_new = async (title,id) => {
+   
+    return await axios.put(
+        "http://localhost:8010/api/v1/edit_new", {title,id}
+    );
+}
 
-export default { list_news,del_new,insert_new }
+
+const GetById = async (id) => {
+    return await axios.get('http://localhost:8010/api/v1/GetById/' + id);
+}
+
+
+
+export default { list_news,del_new,insert_new,edit_new,GetById }

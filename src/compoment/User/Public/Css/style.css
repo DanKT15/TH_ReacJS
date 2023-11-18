@@ -2,3 +2,10 @@
     max-height: 500px; /* Đặt chiều cao tối đa của hình ảnh */
     margin: auto; /* Căn giữa hình ảnh */
   }
+
+  .card-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }

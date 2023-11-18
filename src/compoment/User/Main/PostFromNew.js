@@ -58,16 +58,7 @@ function PostFromNew() {
 
       ))}
      
-      {/* <div class="col-md-4">
-        <div class="card mb-4">
-        <img src={Image} className="card-img-top" alt="Card image" style={{ width: '348px', height: '300px' }} />
-          <div class="card-body">
-            <h5 class="card-title">Tiêu đề bài viết 1</h5>
-            <p class="card-text">Nội dung bài viết 1...</p>
-            <a href="#" class="btn btn-primary">Xem chi tiết</a>
-          </div>
-        </div>
-      </div> */}
+    
 
      
      

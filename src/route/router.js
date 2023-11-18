@@ -14,6 +14,7 @@ import UpdataPost from "../compoment/Admin/post/UpdataPost";
 
 import ListNews from '../compoment/Admin/news/List';
 import AddNew from '../compoment/Admin/news/Add';
+import UpdateNew from '../compoment/Admin/news/Update';
 
 import App from '../compoment/App';
 import NewsDetail from '../compoment/User/Main/NewsDetail';
@@ -63,6 +64,11 @@ const router = createBrowserRouter([
         path: "add_new",
         element: <AddNew/>,
       },
+      {
+        path: "edit_new/:id",
+        element: <UpdateNew/>,
+      },
+
     ]
   },
   //USER 

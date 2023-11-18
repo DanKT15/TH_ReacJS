@@ -54,7 +54,7 @@ function NewsDetail(){
                 <h2>{Post.title}</h2>
                 <img src={Image} className="card-img-top" alt="Card image" style={{ width: '400px', height: '300px' }} />
 
-                <p>Nội dung chi tiết bài viết sẽ được đặt ở đây.</p>
+                <p>{Post.content}</p>
             </div>
 
             <div class="col-md-3 offset-md-1">
