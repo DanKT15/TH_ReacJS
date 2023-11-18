@@ -91,8 +91,6 @@ export default function ListUser() {
 
             const userinfo = GetAuth.data;
 
-            // console.log(userinfo);
-
             if (userinfo.err === 1) {
                 navigate("/admin/login-admin");
             }

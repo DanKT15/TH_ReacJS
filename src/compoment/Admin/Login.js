@@ -33,12 +33,19 @@ export default function Login () {
         const dangnhap = await Api_Login.Login(data_login.username, data_login.Pass);
        
         if (dangnhap.data.err === 1) {
-            alert("Errors: " + dangnhap.data.mess);
+            return alert("Errors: " + dangnhap.data.mess);
         }
         else {
+
+            if (dangnhap.data.user.role === 1) {
+                const oject = await Api_Login.LogOut();
+                return alert("Không đủ quyền truy cập hệ thống");
+            }
+
             setItems(data => {
                 return {...data, user: dangnhap.data.user.name, role: dangnhap.data.user.role}
             });
+
             navigate("/admin");
         }
 

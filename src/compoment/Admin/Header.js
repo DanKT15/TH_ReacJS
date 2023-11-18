@@ -15,6 +15,10 @@ export default function Header() {
 
         // console.log(oject.data.err);
 
+        setItems(data => {
+            return {...data, user: "", role: ""}
+        });
+
         if (oject.data.err === 0) {
             
             navigate("login-admin");
@@ -66,7 +70,7 @@ export default function Header() {
         
         Auth();
 
-    }, []);  
+    }, [items]);  
 
     return ( 
         <nav className="navbar navbar-default navbar-fixed-top">
