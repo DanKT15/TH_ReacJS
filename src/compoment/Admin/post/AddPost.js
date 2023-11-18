@@ -67,24 +67,26 @@ export default function UpdataPost() {
 
             const oject = await API_New.list_news();
 
-            // console.log(oject.data.items);
+            if (oject.data.err === 0) {
+                const Danhmuc = oject.data.items;
 
-            const Danhmuc = oject.data.items;
+                console.log(Danhmuc);
 
-            let tamp = [];
+                let tamp = [];
 
-            for (let index = 0; index < Danhmuc.length; index++) {
+                for (let index = 0; index < Danhmuc.length; index++) {
 
-                tamp.push(
-                    {   
-                        id: Danhmuc[index].id,
-                        title: Danhmuc[index].title
-                    }
-                )
+                    tamp.push(
+                        {   
+                            id: Danhmuc[index].id,
+                            title: Danhmuc[index].title
+                        }
+                    )
 
+                }
+
+                setdanhmuc(tamp)
             }
-
-            setdanhmuc(tamp)
             
         };
     

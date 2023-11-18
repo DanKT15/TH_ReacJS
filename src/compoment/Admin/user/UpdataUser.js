@@ -118,7 +118,7 @@ export default function UpdataUser() {
 
                             </div>
 
-                            <input type="submit" value="Cập nhật"/>
+                            <input type="submit" value="Request"/>
                         </form>
 
                     </div>

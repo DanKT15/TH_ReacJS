@@ -37,7 +37,7 @@ export default function Login () {
         }
         else {
             setItems(data => {
-                return {...data, user: "kiet", role: "2"}
+                return {...data, user: dangnhap.data.user.name, role: dangnhap.data.user.role}
             });
             navigate("/admin");
         }
