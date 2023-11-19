@@ -35,6 +35,9 @@ function Home() {
           });
       }, []);
 
+
+   
+
       
     return (
      
@@ -49,7 +52,7 @@ function Home() {
          {NewPosts.map((item, index) => (
          <div key={index} class="col-md-4">
          <div class="card mb-4">
-             <img src={Image} classNameclass="card-img-top" />
+             <img src={`http://localhost:8010/static/upload/`+item.image}  classNameclass="card-img-top" />
              <div class="card-body">
                  <h5 class="card-title"><Link to={`/post/${item.id}`} >{item.title}</Link></h5>
                  <p class="card-text">{item.content}</p>
@@ -77,7 +80,7 @@ function Home() {
 
                 <div key={index} class="col-md-4">
                 <div class="card mb-4">
-                    <img src={Image} classNameclass="card-img-top" />
+                    <img src={`http://localhost:8010/static/upload/`+item.image} classNameclass="card-img-top" />
                     <div class="card-body">
                         <h5 class="card-title"><Link to={`/post/${item.id}`} >{item.title}</Link></h5>
                         <p class="card-text">{item.content}</p>

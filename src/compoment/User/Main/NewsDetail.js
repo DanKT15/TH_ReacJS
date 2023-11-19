@@ -52,7 +52,7 @@ function NewsDetail(){
         <div class="row">
             <div class="col-md-7">
                 <h2>{Post.title}</h2>
-                <img src={Image} className="card-img-top" alt="Card image" style={{ width: '400px', height: '300px' }} />
+                <img src={`http://localhost:8010/static/upload/`+Post.image} className="card-img-top" alt="Card image" style={{ width: '400px', height: '300px' }} />
 
                 <p>{Post.content}</p>
             </div>

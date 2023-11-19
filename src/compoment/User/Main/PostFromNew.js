@@ -44,7 +44,7 @@ function PostFromNew() {
 
       <div class="col-md-4" key={index}>
         <div class="card mb-4">
-        <img src={Image} className="card-img-top" alt="Card image" style={{ width: '268px', height: '300px' }} />
+        <img src={`http://localhost:8010/static/upload/`+item.image} className="card-img-top" alt="Card image" style={{ width: '268px', height: '300px' }} />
           <div class="card-body">
             <h5 class="card-title"><Link to={`/post/${item.id}`} >
           {item.title}
