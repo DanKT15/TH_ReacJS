@@ -85,7 +85,7 @@ export default function UpdateNew() {
             <div className="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
                 <h3>Updata new</h3>
                 <p className="blue-text"></p>
-                <div className="card">
+                <div className="card" style={{ width: '870px' }}>
                     <h5 className="text-center mb-4"></h5>
                    
                     <form onSubmit={ HandleSubmit }>
